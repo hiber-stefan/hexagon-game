@@ -1,0 +1,16 @@
+/* src/components/Game.css */
+
+.hexagon-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hexagon-row {
+  display: flex;
+  justify-content: center;
+}
+
+.hexagon-row:nth-child(odd) {
+  margin-left: 50px; /* Half the width of the hexagon */
+}

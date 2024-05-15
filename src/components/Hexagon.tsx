@@ -1,6 +1,7 @@
 // src/components/Hexagon.tsx
 import React from "react";
 import { Hexagon as HexagonType, Player } from "../types";
+import "./Hexagon.css"; // Import the CSS file for hexagon styling
 
 interface HexagonProps {
   hexagon: HexagonType;
@@ -20,20 +21,10 @@ const Hexagon: React.FC<HexagonProps> = ({ hexagon, onClick }) => {
   };
 
   return (
-    <div
-      onClick={onClick}
-      style={{
-        width: "50px",
-        height: "50px",
-        backgroundColor: getColor(),
-        display: "inline-block",
-        margin: "5px",
-        textAlign: "center",
-        lineHeight: "50px",
-        border: "1px solid black",
-      }}
-    >
-      {hexagon.state}
+    <div className="hexagon-container" onClick={onClick}>
+      <div className="hexagon" style={{ backgroundColor: getColor() }}>
+        <div className="hexagon-inner">{hexagon.state}</div>
+      </div>
     </div>
   );
 };
